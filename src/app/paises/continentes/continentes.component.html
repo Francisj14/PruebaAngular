@@ -1,0 +1,23 @@
+
+<h3 class="d-flex gap-5 justify-content-center">Buscar Continentes:
+     <small>{{regionActiva | titlecase}}</small>
+</h3>
+<hr>
+ <div class="row ">
+    <div class="col">
+     <h5>Seleccione un continente</h5>
+        <button *ngFor="let region of continentes"
+                [class]="getClaseCss(region)"
+                (click)="actvarRegion(region)">
+                {{region}}
+        </button>
+    </div>
+ </div>
+
+ <div class="row" *ngIf="paises.length > 0">
+    <div class="col">
+        <!-- les manda ya los paises que se retornan -->
+        <app-tabla [paises]="paises">
+        </app-tabla>
+    </div>
+</div>
